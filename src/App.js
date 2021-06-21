@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Weather from "./components/weather/Weather";
+import Search from "./components/search/Search";
 
-function App() {
+export default function App() {
+  const [weather, setWeather] = useState([]);
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=new york&appid=${process.env.REACT_APP_WEATHER_API_KEY}`;
+
+  useEffect(() => {
+    async function SearchWeather() {
+      const response = await fetch(url);
+      const result = await response.json();
+      setWeather(result);
+    }
+    SearchWeather();
+  }, [url]);
+
+  console.log(weather.weather);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Search />
+      <Weather />
+    </>
   );
 }
-
-export default App;
