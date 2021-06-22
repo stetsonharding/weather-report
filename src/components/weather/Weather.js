@@ -22,7 +22,7 @@ console.log(data)
         <div className="weather__information">
           <p>{data.weather[0].description}</p>
           <p>Location: {data.name}</p>
-          <p>Tempature: {temp} </p>
+          <p>Tempature: {temp} <sup>o</sup></p>
           <p>Humidity: {data.main.humidity}% </p>
           <p>Wind Speed: {data.wind.speed} Mps </p>
           {/* <p>Sunrise: {data.sys.} </p> */}

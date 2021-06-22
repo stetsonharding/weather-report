@@ -11,7 +11,7 @@ export default function Search() {
 
 async function getWeatherReport(e) {
   e.preventDefault();
-  if (stateSearched == "") {
+  if (stateSearched === "") {
     alert("Add values");
   } else {
     const data = await fetch(
@@ -20,7 +20,7 @@ async function getWeatherReport(e) {
       .then((res) => res.json())
       .then((data) => data);
 
-    setWeather({ data: data });
+    setWeather(...weather, { data: data });
     setStateSearched("")
   }
 }
