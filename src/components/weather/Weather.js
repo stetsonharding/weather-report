@@ -3,19 +3,29 @@ import React from "react";
 import "./Weather.css";
 
 export default function Weather(props) {
+const {data} = props
+
+ const iconurl =`http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+ const temp = Math.trunc((( data.main.temp - 273.15) * 9/5) + 32)
+//  const time = 
+ 
+console.log(data)
+
+
+
   return (
     <section className="weather__container">
       <main className="weather__full-weather-report">
-        <div className="weather__information">
-          <h2>Day of week</h2>
-          <p>Date</p>
-        </div>
         <div className="weather__image">
-          <img src="" alt="weather" />
+          <img src={iconurl} alt="weather" />
         </div>
         <div className="weather__information">
-          <p>Dagrees</p>
-          <p>Kind of weather</p>
+          <p>{data.weather[0].description}</p>
+          <p>Location: {data.name}</p>
+          <p>Tempature: {temp} </p>
+          <p>Humidity: {data.main.humidity}% </p>
+          <p>Wind Speed: {data.wind.speed} Mps </p>
+          {/* <p>Sunrise: {data.sys.} </p> */}
         </div>
       </main>
     </section>
