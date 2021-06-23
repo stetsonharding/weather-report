@@ -15,7 +15,7 @@ console.log(data)
 
   return (
     <section className="weather__container">
-      <main className="weather__full-weather-report">
+      <div className="weather__full-weather-report">
         <div className="weather__image">
           <img src={iconurl} alt="weather" />
         </div>
@@ -27,7 +27,7 @@ console.log(data)
           <p>Wind Speed: {data.wind.speed} Mps </p>
           {/* <p>Sunrise: {data.sys.} </p> */}
         </div>
-      </main>
+      </div>
     </section>
   );
 }

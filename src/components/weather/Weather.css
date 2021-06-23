@@ -1,11 +1,19 @@
 .weather__container {
-  height: 75vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+ 
+ 
+  /* flex-direction: row; */
+
+  background-color: orchid;
+ width: 50%;
 }
 
-.weather__full-weather-report {
-  /* background-color: blueviolet; */
+.weather__full-weather-report{
+  height: 100vh;
+  background: darkcyan;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+ 
+
 }
