@@ -40,7 +40,8 @@ async function getWeatherReport(e) {
           placeholder="Search State"
           value={stateSearched}
         />
-        <button className="search__button">Search</button>
+      <button className="search__button"><i className="fas fa-search search-icon"></i></button>
+     
         </form>
       </div>
 

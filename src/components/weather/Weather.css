@@ -12,8 +12,44 @@
   background: darkcyan;
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   width: 100%;
- 
+  justify-content: flex-start;
+  align-items: flex-end;
+position: relative;
+}
 
+.weather__location-container{
+  position: absolute;
+  bottom: 450px;
+  padding-left: 25px;
+  display: flex;
+}
+
+.weather__location{
+  font-size: 50px;
+  letter-spacing: 6px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-left: 20px;
+}
+
+.weather__image-container{
+  position: absolute;
+  bottom: 250px;
+  padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.weather__temp{
+  color: white;
+  font-size: 75px;
+  margin-left: 10px;
+}
+
+.weather__image{
+  height: 130px;
 }
