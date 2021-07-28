@@ -11,7 +11,7 @@ export default function Search() {
 
 async function getWeatherReport(e) {
   e.preventDefault();
-  if (stateSearched == "") {
+  if (stateSearched === "") {
     alert("Add values");
   } else {
     const data = await fetch(
@@ -20,7 +20,7 @@ async function getWeatherReport(e) {
       .then((res) => res.json())
       .then((data) => data);
 
-    setWeather({ data: data });
+    setWeather( { data: data });
     setStateSearched("")
   }
 }
@@ -30,24 +30,25 @@ async function getWeatherReport(e) {
   return (
     <main>
       <div className="search__container">
-        <div className="search__title">
+      <div className="search__title">
           <h1>Weather forcast</h1>
         </div>
-        <form>
+        <form className="seach__form" onSubmit={(e) => getWeatherReport(e)}>
         <input
           type="text"
           onChange={(e) => setStateSearched(e.target.value)}
           placeholder="Search State"
           value={stateSearched}
         />
-        <button  onClick={(e) => getWeatherReport(e)}>Search</button>
+      <button className="search__button"><i className="fas fa-search search-icon"></i></button>
+     
         </form>
       </div>
 
     {weather.data !== undefined ? (
-      <div>
+     
       <Weather data={weather.data} />
-      </div> 
+     
     ) : null}
     </main>
 

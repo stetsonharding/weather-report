@@ -15,19 +15,24 @@ console.log(data)
 
   return (
     <section className="weather__container">
-      <main className="weather__full-weather-report">
-        <div className="weather__image">
-          <img src={iconurl} alt="weather" />
+      <div className="weather__full-weather-report">
+
+        <div className="weather__location-container">
+        <p  className="weather__temp"> {temp} <span>&#176;</span></p>
+          <p className="weather__location">{data.name}</p>
         </div>
-        <div className="weather__information">
+ 
+        <div className="weather__image-container">
+          <img src={iconurl} alt="weather" className="weather__image" />
           <p>{data.weather[0].description}</p>
-          <p>Location: {data.name}</p>
-          <p>Tempature: {temp} </p>
+          
+        </div>
+
+        {/* <div className="weather__information">
           <p>Humidity: {data.main.humidity}% </p>
           <p>Wind Speed: {data.wind.speed} Mps </p>
-          {/* <p>Sunrise: {data.sys.} </p> */}
-        </div>
-      </main>
+        </div>  */}
+      </div>
     </section>
   );
 }
