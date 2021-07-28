@@ -1,16 +1,7 @@
-import React from "react";
+import Search from "../src/components/search/Search";
 
-import Search from "./components/search/Search";
-
-
-export default function App() {
-
- 
-
-  return (
-    <>
-      <Search />
-      
-    </>
-  );
+function App() {
+  return <Search />;
 }
+
+export default App;
